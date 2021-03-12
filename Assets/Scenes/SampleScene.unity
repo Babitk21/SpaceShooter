@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d980be1cf1e5f5d489823ec1e6989d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0
 --- !u!1 &359762740
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +406,10 @@ MonoBehaviour:
   - tag: asteroid
     prefab: {fileID: 730309657551713089, guid: c278fdf8c6b39ec4381599bd6136d40e, type: 3}
     size: 3
+  - tag: bullet
+    prefab: {fileID: 5615292107877645544, guid: f5c199cfd84ea524da93961a846c6e85,
+      type: 3}
+    size: 10
 --- !u!4 &938595906
 Transform:
   m_ObjectHideFlags: 0
@@ -515,8 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  bullet: {fileID: 5615292107877645544, guid: f5c199cfd84ea524da93961a846c6e85, type: 3}
-  offset: 0
+  offset: 1
 --- !u!60 &1816655642
 PolygonCollider2D:
   m_ObjectHideFlags: 0

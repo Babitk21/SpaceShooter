@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
-    public GameObject bullet;
+   // public GameObject bullet;
     public float offset;
     // Start is called before the first frame update
     void Start()
@@ -37,16 +37,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-
-            bullet.transform.position = new Vector3(transform.position.x, transform.position.y + offset, 0);
-            Instantiate(bullet, bullet.transform.position, Quaternion.identity);
+            Vector3 bulletSpawnPosition= new Vector3(transform.position.x, transform.position.y + offset, 0);
+            ObjectPooler.Instance.SpawnFromPool("bullet", bulletSpawnPosition, Quaternion.identity);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag=="asteroid")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
